@@ -1,16 +1,21 @@
 import "./App.css";
-import Planeta from "./components/Planeta.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Planetas from "./pages/Planetas";
+import Roberts from "./pages/Roberts";
+import ImagenDelDia from "./pages/ImagenDelDia";
+import Header from "./components/Header";
 function App() {
   return (
-    <main className="flex h-screen bg-slate-200">
-      <section>
-        <div className="aspect-square w-20">
-          <img src="/tierra.png" alt="" />
-        </div>
-      </section>
-      <section className="aspect-square fixed right-0 h-full">
-        <Planeta />
-      </section>
+    <main className="flex h-screen bg-slate-200 lg:flex-col">
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/inicio" element={<ImagenDelDia />} />
+          <Route path="/" element={<Planetas />} />
+          <Route path="/roberts" element={<Roberts />} />
+          <Route path="/error" element={<h1>404</h1>} />
+        </Routes>
+      </BrowserRouter>
     </main>
   );
 }

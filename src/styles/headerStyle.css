@@ -1,0 +1,45 @@
+header {
+  background-color: #2d3748;
+  display: flex;
+  justify-content: start;
+}
+
+ul {
+
+  display: flex;
+  justify-content: center;
+  gap: 6em;
+  width: 50%;
+  padding: 1em 12em !important;
+}
+
+a {
+
+  color: rgba(255, 255, 255, .8) !important;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+@media (max-width: 950px) {
+
+  ul {
+
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 !important;
+    gap: 0;
+  }
+
+
+  a {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    white-space: nowrap;
+
+    font-size: 1em;
+    rotate: 180deg;
+    padding: 1em 0.5em;
+  }
+
+
+}
