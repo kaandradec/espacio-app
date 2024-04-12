@@ -88,17 +88,6 @@ export default function useKeyPressed() {
     if (buttonPressed === 9) {
       setKeyPlanet(2);
     }
-
-    // CHANGE SCREEN
-    // if (buttonPressed === 3) {
-    //   window.location.href = "/inicio";
-    // }
-    // if (buttonPressed === 4) {
-    //   window.location.href = "/";
-    // }
-    // if (buttonPressed === 1) {
-    //   window.location.href = "/roberts";
-    // }
   });
 
   function handleButtons(buttons) {

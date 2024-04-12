@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Planeta from "../components/Planeta";
 
 export default function Planetas() {
