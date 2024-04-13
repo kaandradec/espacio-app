@@ -2,7 +2,7 @@
 import "../styles/headerStyle.css";
 export default function Header() {
   return (
-    <header>
+    <header className="header bg-gray-600 dark:bg-slate-800">
       <ul>
         <Item href="/inicio" text="INICIO" />
         <Item href="/" text="PLANETAS" />
@@ -15,7 +15,9 @@ export default function Header() {
 function Item({ href, text }) {
   return (
     <li>
-      <a href={href}>{text}</a>
+      <a className="" href={href}>
+        {text}
+      </a>
     </li>
   );
 }

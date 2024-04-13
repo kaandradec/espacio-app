@@ -1,0 +1,13 @@
+.planetasContenedor {
+  height: calc(100vh - 4em);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media (max-width: 950px) {
+  .planetasContenedor {
+    height: 100dvh;
+  }
+}

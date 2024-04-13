@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { KeyPressedContext } from "../contexts/KeyContext";
+import useGamepad from "../hooks/useGamepad";
 
 export default function Roberts() {
   const {
@@ -20,7 +19,7 @@ export default function Roberts() {
     dPad,
     selectPressed,
     startPressed,
-  } = useContext(KeyPressedContext);
+  } = useGamepad();
 
   const handleDPad = (value) => {
     if (value > 2) return "";

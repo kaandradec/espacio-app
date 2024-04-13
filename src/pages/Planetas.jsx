@@ -1,17 +1,16 @@
 /* eslint-disable react/prop-types */
+import BentoPlanetas from "../components/BentoPlanetas";
 import Planeta from "../components/Planeta";
+import KeyPlanetProvider from "../contexts/keyPlanetContext";
+import "../styles/PlanetasStyle.css";
 
 export default function Planetas() {
   return (
-    <div className="flex justify-between w-full h-screen">
-      <section>
-        <div className="aspect-square w-20">
-          <img src="/tierra.png" alt="" />
-        </div>
-      </section>
-      <section className="aspect-square h-full">
+    <KeyPlanetProvider>
+      <div className="planetasContenedor ">
+        <BentoPlanetas />
         <Planeta />
-      </section>
-    </div>
+      </div>
+    </KeyPlanetProvider>
   );
 }
