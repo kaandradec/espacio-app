@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unknown-property */
 import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { Suspense, useContext, useRef } from "react";
+import { Suspense, useContext, useRef, useState } from "react";
 import { TextureLoader } from "three";
 import "../App.css";
 import useGamepad from "../hooks/useGamepad";
@@ -34,9 +34,18 @@ export default function Planeta() {
 
 export function Esfera(props) {
   const colorMap = useLoader(TextureLoader, [
+    "/textures/sol-texture.jpg",
+    "/textures/mercurio-texture.png",
+    "/textures/venus-texture.png",
     "/textures/tierra-texture.jpeg",
+    "/textures/luna-texture.png",
     "/textures/marte-texture.png",
+    "/textures/jupiter-texture.png",
+    "/textures/saturno-texture.png",
+    "/textures/urano-texture.png",
+    "/textures/neptuno-texture.png",
   ]);
+  const [lastPressedTime, setLastPressedTime] = useState(0);
   const { keyPlanet, setKeyPlanet } = useContext(KeyPlanetContext);
 
   const planetRef = useRef("planeta");
@@ -91,14 +100,31 @@ export function Esfera(props) {
     if (rsPressed) resetRotation(planet);
 
     // CHANGE PLANET
-    if (lPressed) {
-      setKeyPlanet(1);
-    }
-
-    if (rPressed) {
-      setKeyPlanet(2);
-    }
+    if (keyPlanet < 0) setKeyPlanet(9);
+    if (keyPlanet > 9) setKeyPlanet(0);
+    if (lPressed) handleLPressed();
+    if (rPressed) handleRPressed();
   });
+
+  const handleLPressed = () => {
+    const now = Date.now();
+    const timeSinceLastPress = now - lastPressedTime;
+
+    if (timeSinceLastPress > 250) {
+      setLastPressedTime(now);
+      setKeyPlanet((prev) => prev - 1);
+    }
+  };
+
+  const handleRPressed = () => {
+    const now = Date.now();
+    const timeSinceLastPress = now - lastPressedTime;
+
+    if (timeSinceLastPress > 250) {
+      setLastPressedTime(now);
+      setKeyPlanet((prev) => prev + 1);
+    }
+  };
 
   const resetPosition = (planet) => {
     planet.position.x = 0;
@@ -118,8 +144,16 @@ export function Esfera(props) {
     <group {...props} dispose={null}>
       <mesh ref={planetRef}>
         <sphereGeometry args={[2.5, 64, 64]} />
-        {keyPlanet === 1 ? <meshStandardMaterial map={colorMap[0]} /> : ""}
-        {keyPlanet === 2 ? <meshStandardMaterial map={colorMap[1]} /> : ""}
+        {keyPlanet === 0 ? <meshStandardMaterial map={colorMap[0]} /> : ""}
+        {keyPlanet === 1 ? <meshStandardMaterial map={colorMap[1]} /> : ""}
+        {keyPlanet === 2 ? <meshStandardMaterial map={colorMap[2]} /> : ""}
+        {keyPlanet === 3 ? <meshStandardMaterial map={colorMap[3]} /> : ""}
+        {keyPlanet === 4 ? <meshStandardMaterial map={colorMap[4]} /> : ""}
+        {keyPlanet === 5 ? <meshStandardMaterial map={colorMap[5]} /> : ""}
+        {keyPlanet === 6 ? <meshStandardMaterial map={colorMap[6]} /> : ""}
+        {keyPlanet === 7 ? <meshStandardMaterial map={colorMap[7]} /> : ""}
+        {keyPlanet === 8 ? <meshStandardMaterial map={colorMap[8]} /> : ""}
+        {keyPlanet === 9 ? <meshStandardMaterial map={colorMap[9]} /> : ""}
       </mesh>
     </group>
   );

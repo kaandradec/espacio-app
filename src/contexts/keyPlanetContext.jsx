@@ -5,7 +5,7 @@ import { createContext, useState } from "react";
 export const KeyPlanetContext = createContext();
 
 export default function KeyPlanetProvider({ children }) {
-  const [keyPlanet, setKeyPlanet] = useState(1);
+  const [keyPlanet, setKeyPlanet] = useState(3);
   return (
     <KeyPlanetContext.Provider value={{ keyPlanet, setKeyPlanet }}>
       {children}
