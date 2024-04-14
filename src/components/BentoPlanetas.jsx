@@ -10,10 +10,10 @@ export default function BentoPlanetas() {
   const { keyPlanet, setKeyPlanet } = useContext(KeyPlanetContext);
   return (
     <div
-      className="grid w-full grid-cols-5 p-8 gap-2 h-full"
+      className="grid w-full grid-cols-4 md:grid-cols-5 p-2 md:p-8  gap-2 h-full"
       style={{ gridTemplateRows: "auto auto auto 1fr" }}
     >
-      <h1 className="text-2xl lg:text-5xl text-white/80 font-semibold col-span-5 text-center mb-0 lg:mb-4">
+      <h1 className="md:text-2xl lg:text-5xl text-white/80 font-semibold col-span-4 md:col-span-5 text-center mb-0 lg:mb-4">
         Planetas
       </h1>
       <BotonPlaneta
@@ -86,7 +86,7 @@ export default function BentoPlanetas() {
         keyPlanet={keyPlanet}
         handleClick={() => setKeyPlanet(9)}
       />
-      <div className="col-span-5 overflow-auto m-1 lg:m-8 mt-1 lg:mt-8">
+      <div className="col-span-4 md:col-span-5 overflow-auto m-1 lg:m-8 mt-1 lg:mt-8">
         <ParagraphDropCap text={planetInfo[keyPlanet].p1} />
         <Paragraph text={planetInfo[keyPlanet].p2} />
         <Paragraph text={planetInfo[keyPlanet].p3} />
