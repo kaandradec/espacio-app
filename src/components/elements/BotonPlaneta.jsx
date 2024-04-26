@@ -11,7 +11,7 @@ export default function BotonPlaneta({
     <div
       className={`
       h-min
-      w-12 md:w-16 lg:w-36 mx-auto bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 
+      w-12 md:w-16 lg:w-28 mx-auto bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 
       shadow-lg
       hover:shadow-cyan-400/90 transition-all ease-in-out duration-500 
       ${keyNumber === keyPlanet ? "shadow-cyan-400/90" : "shadow-lg"}

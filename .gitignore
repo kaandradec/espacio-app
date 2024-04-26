@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # API keys
-apiKeys.js
+/src/constants/apiKeys.js

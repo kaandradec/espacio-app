@@ -6,7 +6,7 @@ import ImagenDelDia from "./pages/ImagenDelDia";
 import Header from "./components/Header";
 function App() {
   return (
-    <main className="flex h-dvh bg-slate-200 dark:bg-gray-900 lg:flex-col ">
+    <main className="flex h-dv bg-slate-200 dark:bg-gray-900 lg:flex-col ">
       <Header />
       <BrowserRouter>
         <Routes>
