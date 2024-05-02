@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Planetas from "./pages/Planetas";
 import Roberts from "./pages/Roberts";
+import Gamepad from "./pages/Gamepad";
 import ImagenDelDia from "./pages/ImagenDelDia";
 import Header from "./components/Header";
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <Route path="/inicio" element={<ImagenDelDia />} />
           <Route path="/" element={<Planetas />} />
           <Route path="/roberts" element={<Roberts />} />
+          <Route path="/gamepad" element={<Gamepad />} />
           <Route path="/error" element={<h1>404</h1>} />
         </Routes>
       </BrowserRouter>
