@@ -87,9 +87,9 @@ export default function BentoPlanetas() {
         handleClick={() => setKeyPlanet(9)}
       />
       <div className="col-span-4 md:col-span-5 overflow-auto lg:mt-2 lg:mx-4">
-        <ParagraphDropCap text={planetInfo[keyPlanet].p1} />
-        <Paragraph text={planetInfo[keyPlanet].p2} />
-        <Paragraph text={planetInfo[keyPlanet].p3} />
+        <ParagraphDropCap text={planetInfo[keyPlanet]?.p1} />
+        <Paragraph text={planetInfo[keyPlanet]?.p2} />
+        <Paragraph text={planetInfo[keyPlanet]?.p3} />
       </div>
     </div>
   );

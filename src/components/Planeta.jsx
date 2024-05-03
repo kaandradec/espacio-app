@@ -59,6 +59,7 @@ export function Esfera(props) {
     rsPressed,
     lPressed,
     rPressed,
+    atLeastOnePressed,
   } = useGamepad();
 
   const { keyPressed, setKeyPressed } = useKeyboard();
@@ -66,6 +67,7 @@ export function Esfera(props) {
   useFrame((state, delta) => {
     const planet = planetRef.current;
 
+    console.log("atLeastOnePressed", atLeastOnePressed);
     // KEYBOARD
     const keyboardActions = {
       w: () => (planet.position.z -= delta / 2),

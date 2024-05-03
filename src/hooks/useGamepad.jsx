@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function useGamepad() {
+  const [atLeastOnePressed, setAtLeastOnePressed] = useState(false);
   const [axisLeftX, setAxisLeftX] = useState(0);
   const [axisLeftY, setAxisLeftY] = useState(0);
 
@@ -27,6 +28,7 @@ export default function useGamepad() {
   const cargarGamepad = () => {
     setInterval(() => {
       const controller = navigator.getGamepads()[0];
+      // console.log("controller", controller);
 
       if (controller) {
         setAxisLeftX(controller.axes[0]);
@@ -53,9 +55,13 @@ export default function useGamepad() {
 
         controller.buttons.forEach((button, index) => {
           if (button.pressed) {
-            console.log(`Button ${index} pressed`);
+            // console.log(`Button ${index} pressed`);
           }
         });
+        const isAtLeastOnePressed = controller.buttons.some(
+          (button) => button.pressed
+        );
+        setAtLeastOnePressed(isAtLeastOnePressed);
       }
     }, 200);
   };
@@ -66,6 +72,7 @@ export default function useGamepad() {
   }, []);
 
   return {
+    atLeastOnePressed,
     axisLeftX,
     axisLeftY,
     axisRightX,

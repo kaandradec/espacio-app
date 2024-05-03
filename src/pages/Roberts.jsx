@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { fetchRobertsInfo } from "../services/fetchData";
-import { Carousel } from "flowbite-react";
 import { ImagesCarousel } from "../components/ImagesCarousel";
+import { RobertsTabs } from "../components/RobertsTabs";
 
 export default function Roberts() {
   const [photosData, setPhotosData] = useState([]);
@@ -12,10 +12,6 @@ export default function Roberts() {
     setPhotosData(data.photos);
   };
 
-  useEffect(() => {
-    getData();
-  }, []);
-
   const getImages = () => {
     let images = photosData.map((photo) => {
       return photo.img_src;
@@ -23,9 +19,17 @@ export default function Roberts() {
     return images;
   };
 
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
-    <div className=" max-w-sm">
-      <ImagesCarousel images={getImages()} />
-    </div>
+    <>
+      <h1>Seleccione el robert</h1>
+      <RobertsTabs />
+      <div className=" max-w-4xl">
+        <ImagesCarousel images={getImages()} />
+      </div>
+    </>
   );
 }
