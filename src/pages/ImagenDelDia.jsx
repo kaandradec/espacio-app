@@ -21,7 +21,7 @@ export default function ImagenDelDia() {
       <section className="w-1/2 ">
         <h1
           className={`
-          text-4xl md:text-6xl lg:text-7xl text-black/80 dark:text-white/90 
+          text-sm md:text-2xl lg:text-7xl text-black/80 dark:text-white/90 
           text-balance font-bold
           lg:leading-tight
           mb-8

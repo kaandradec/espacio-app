@@ -1,42 +1,58 @@
-
 import React from "react";
-import { Button, Tabs, TabsRef } from "flowbite-react";
+import { Tabs, TabsRef } from "flowbite-react";
 import { useRef, useState } from "react";
-import { HiAdjustments, HiClipboardList, HiUserCircle } from "react-icons/hi";
-import { MdDashboard } from "react-icons/md";
 import { FaXbox, FaPlaystation, FaSteam } from "react-icons/fa";
+import { RoberCard } from "./RoberCard";
 
-export function RobertsTabs() {
-  const tabsRef = useRef<TabsRef>(null);
-  const [activeTab, setActiveTab] = useState(0);
+export function RobertsTabs({ activeTab, setActiveTab, roberInfo }) {
+  const tabsRef = useRef();
+
+  const { status, total_photos } = roberInfo;
 
   return (
     <div className="flex flex-col gap-3">
-      <Tabs aria-label="Default tabs" style="default" ref={tabsRef} onActiveTabChange={(tab) => setActiveTab(tab)}>
+      <Tabs
+        aria-label="Default tabs"
+        style="default"
+        onActiveTabChange={(tab) => setActiveTab(tab)}
+      >
         <Tabs.Item active title="Curiosity" icon={FaXbox}>
-          This is <span className="font-medium text-gray-800 dark:text-white">Profile tab's associated content</span>.
-          Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to
-          control the content visibility and styling.
+          <RoberCard
+            imgSrc="/imagenes/curiosity.png"
+            name="Curiosity"
+            landingDate="2012-08-06"
+            launchDate='2011-11-26'
+            status={status}
+            maxDate="2024-02-19"
+            totalPhotos={total_photos}
+          />
         </Tabs.Item>
-        <Tabs.Item active title="Spirit" icon={FaPlaystation}>
-          This is <span className="font-medium text-gray-800 dark:text-white">Profile tab's associated content</span>.
-          Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to
-          control the content visibility and styling.
+        <Tabs.Item active title="Opportunity" icon={FaXbox}>
+          <RoberCard
+            imgSrc="/imagenes/opportunity.jpg"
+            name="Opportunity"
+            landingDate="2004-01-25"
+            launchDate='2003-07-07'
+            status={status}
+            maxDate="2018-06-11"
+            totalPhotos={total_photos}
+          />
         </Tabs.Item>
-        <Tabs.Item active title="Opportunity" icon={FaSteam}>
-          This is <span className="font-medium text-gray-800 dark:text-white">Profile tab's associated content</span>.
-          Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to
-          control the content visibility and styling.
-        </Tabs.Item>
-        <Tabs.Item active title="Nueva Tab" icon={FaSteam}>
-          <Texto />
+        <Tabs.Item active title="Spirit" icon={FaXbox}>
+          <RoberCard
+            imgSrc="/imagenes/spirit.webp"
+            name="Spirit"
+            landingDate="2004-01-04"
+            launchDate='2003-06-10'
+            status={status}
+            maxDate="2010-03-2"
+            totalPhotos={total_photos}
+          />
         </Tabs.Item>
       </Tabs>
-      <div className="text-sm text-gray-500 dark:text-gray-400">Active tab: {activeTab}</div>
+      <div className="text-sm text-gray-500 dark:text-gray-400">
+        Active tab: {activeTab}
+      </div>
     </div>
   );
-}
-
-function Texto() {
-  return <h1>Holo que hace Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas molestiae, est quos adipisci corporis aliquam eveniet cum, laborum autem dicta veniam eaque? Ipsa, architecto corporis voluptatibus molestiae exercitationem rerum enim!</h1>
 }
