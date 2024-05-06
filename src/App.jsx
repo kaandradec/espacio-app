@@ -1,21 +1,14 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Planetas from "./pages/Planetas";
-import Roberts from "./pages/Roberts";
+import Rovers from "./pages/Rovers";
 import Gamepad from "./pages/Gamepad";
 import ImagenDelDia from "./pages/ImagenDelDia";
 import Header from "./components/Header";
 import useGamepad from "./hooks/useGamepad";
 import { useEffect } from "react";
 function App() {
-  const {
-    aPressed,
-    bPressed,
-    setBPressed,
-    xPressed,
-    yPressed,
-    atLeastOnePressed,
-  } = useGamepad();
+  const { aPressed, bPressed, xPressed, yPressed } = useGamepad();
 
   useEffect(() => {
     console.log("useEffect App.jsx");
@@ -34,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/inicio" element={<ImagenDelDia />} />
           <Route path="/" element={<Planetas />} />
-          <Route path="/roberts" element={<Roberts />} />
+          <Route path="/roberts" element={<Rovers />} />
           <Route path="/gamepad" element={<Gamepad />} />
           <Route path="/error" element={<h1>404</h1>} />
         </Routes>

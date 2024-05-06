@@ -18,70 +18,70 @@ export default function BentoPlanetas() {
       </h1>
       <BotonPlaneta
         text="Sol"
-        url="/imagenes/sol.png"
+        url="/imagenes/sol.webp"
         keyNumber={0}
         keyPlanet={keyPlanet}
         handleClick={() => setKeyPlanet(0)}
       />
       <BotonPlaneta
         text="Mercurio"
-        url="/imagenes/mercurio.png"
+        url="/imagenes/mercurio.webp"
         keyNumber={1}
         keyPlanet={keyPlanet}
         handleClick={() => setKeyPlanet(1)}
       />
       <BotonPlaneta
         text="Venus"
-        url="/imagenes/venus.png"
+        url="/imagenes/venus.webp"
         keyNumber={2}
         keyPlanet={keyPlanet}
         handleClick={() => setKeyPlanet(2)}
       />
       <BotonPlaneta
         text="Tierra"
-        url="/imagenes/tierra.png"
+        url="/imagenes/tierra.webp"
         keyNumber={3}
         keyPlanet={keyPlanet}
         handleClick={() => setKeyPlanet(3)}
       />
       <BotonPlaneta
         text="Luna"
-        url="/imagenes/luna.png"
+        url="/imagenes/luna.webp"
         keyNumber={4}
         keyPlanet={keyPlanet}
         handleClick={() => setKeyPlanet(4)}
       />
       <BotonPlaneta
         text="Marte"
-        url="/imagenes/marte.png"
+        url="/imagenes/marte.webp"
         keyNumber={5}
         keyPlanet={keyPlanet}
         handleClick={() => setKeyPlanet(5)}
       />
       <BotonPlaneta
         text="Jupiter"
-        url="/imagenes/jupiter.png"
+        url="/imagenes/jupiter.webp"
         keyNumber={6}
         keyPlanet={keyPlanet}
         handleClick={() => setKeyPlanet(6)}
       />
       <BotonPlaneta
         text="Saturno"
-        url="/imagenes/saturno.png"
+        url="/imagenes/saturno.webp"
         keyNumber={7}
         keyPlanet={keyPlanet}
         handleClick={() => setKeyPlanet(7)}
       />
       <BotonPlaneta
         text="Urano"
-        url="/imagenes/urano.png"
+        url="/imagenes/urano.webp"
         keyNumber={8}
         keyPlanet={keyPlanet}
         handleClick={() => setKeyPlanet(8)}
       />
       <BotonPlaneta
         text="Neptuno"
-        url="/imagenes/neptuno.png"
+        url="/imagenes/neptuno.webp"
         keyNumber={9}
         keyPlanet={keyPlanet}
         handleClick={() => setKeyPlanet(9)}

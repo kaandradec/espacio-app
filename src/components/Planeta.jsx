@@ -34,16 +34,16 @@ export default function Planeta() {
 
 export function Esfera(props) {
   const colorMap = useLoader(TextureLoader, [
-    "/textures/sol-texture.jpg",
-    "/textures/mercurio-texture.png",
-    "/textures/venus-texture.png",
-    "/textures/tierra-texture.jpeg",
-    "/textures/luna-texture.png",
-    "/textures/marte-texture.png",
-    "/textures/jupiter-texture.png",
-    "/textures/saturno-texture.png",
-    "/textures/urano-texture.png",
-    "/textures/neptuno-texture.png",
+    "/textures/sol-texture.webp",
+    "/textures/mercurio-texture.webp",
+    "/textures/venus-texture.webp",
+    "/textures/tierra-texture.webp",
+    "/textures/luna-texture.webp",
+    "/textures/marte-texture.webp",
+    "/textures/jupiter-texture.webp",
+    "/textures/saturno-texture.webp",
+    "/textures/urano-texture.webp",
+    "/textures/neptuno-texture.webp",
   ]);
   const [lastPressedTime, setLastPressedTime] = useState(0);
   const { keyPlanet, setKeyPlanet } = useContext(KeyPlanetContext);
