@@ -24,6 +24,6 @@ dist-ssr
 *.sw?
 
 # API keys
-/src/constants/apiKeys.js
+# /src/constants/apiKeys.js
 
 .vercel
