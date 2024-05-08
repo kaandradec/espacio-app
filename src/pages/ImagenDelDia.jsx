@@ -17,14 +17,14 @@ export default function ImagenDelDia() {
   }, []);
 
   return (
-    <div className="h-dvh flex justify-between w-4/6 mx-auto gap-32 mt-8">
+    <div className="h-dvh flex  w-full lg:w-4/6 mx-4 lg:mx-auto gap-32 mt-2 lg:mt-8">
       <section className="w-1/2 ">
         <h1
           className={`
-          text-sm md:text-2xl lg:text-7xl text-black/80 dark:text-white/90 
+          text-xl md:text-2xl lg:text-7xl text-black/80 dark:text-white/90 
           text-balance font-bold
           lg:leading-tight
-          mb-8
+          mb-1 md:mb-8
        `}
         >
           Imagen del día
@@ -53,7 +53,7 @@ function ImageView({ url, title, date }) {
       <main className="relative">
         <div
           className={`
-            absolute aspect-square p-4 object-contain
+            absolute aspect-square p-0 lg:p-4 object-contain
              border-2 rounded-md
               border-black/60 dark:border-white/60
             `}
@@ -72,7 +72,7 @@ function ImageView({ url, title, date }) {
           >
             <h2
               className={`
-            text-md md:text-lg lg:text-xl text-black/60 dark:text-white/90 
+            text-xs lg:text-lg text-black/60 dark:text-white/90 
             font-bold 
           `}
             >

@@ -34,7 +34,7 @@ export default function Roberts() {
   }, [activeTab, pageNumber]);
 
   return (
-    <main className="flex flex-col md:flex-row max-w-6xl mx-auto gap-8 my-2 md:my-8 p-4">
+    <main className="flex flex-row max-w-6xl mx-auto gap-2 lg:gap-8 my-1 lg:my-8 p-2 lg:p-4">
       <section>
         <RoversTabs
           activeTab={activeTab}
