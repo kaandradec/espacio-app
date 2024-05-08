@@ -19,7 +19,7 @@ export default function useKeyboard() {
   };
 
   useEffect(() => {
-    console.log("useEffect useKeyboard");
+    // console.log("useEffect useKeyboard");
     cargarKeyboard();
 
     return quitarKeyboard;

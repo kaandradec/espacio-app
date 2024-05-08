@@ -6,7 +6,7 @@ export default function Header() {
       <ul>
         <Item href="/inicio" text="INICIO" />
         <Item href="/" text="PLANETAS" />
-        <Item href="/roberts" text="ROBERTS" />
+        <Item href="/rovers" text="ROBERTS" />
       </ul>
     </header>
   );
