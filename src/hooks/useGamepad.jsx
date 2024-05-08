@@ -53,7 +53,7 @@ export default function useGamepad() {
         setSelectPressed(controller.buttons[10].pressed);
         setStartPressed(controller.buttons[11].pressed);
 
-        controller.buttons.forEach((button, index) => {
+        controller.buttons.forEach((button) => {
           if (button.pressed) {
             // console.log(`Button ${index} pressed`);
           }
@@ -67,7 +67,7 @@ export default function useGamepad() {
   };
 
   useEffect(() => {
-    console.log("useEffect useGamepad  ");
+    // console.log("useEffect useGamepad  ");
     cargarGamepad();
   }, []);
 

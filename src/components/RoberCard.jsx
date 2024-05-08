@@ -27,7 +27,7 @@ export function RoberCard({
 }
 
 const TextInfo = ({ title, value }) => (
-  <span className="text-xs">
+  <span className="text-xs lg:text-lg">
     <strong>{title}</strong>
     {value}
   </span>

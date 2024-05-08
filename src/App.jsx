@@ -11,13 +11,12 @@ function App() {
   const { aPressed, bPressed, xPressed, yPressed } = useGamepad();
 
   useEffect(() => {
-    console.log("useEffect App.jsx");
     if (xPressed && window.location.pathname !== "/inicio")
       window.location.href = "/inicio";
     if (yPressed && window.location.pathname !== "/")
       window.location.href = "/";
-    if (bPressed && window.location.pathname !== "/roberts")
-      window.location.href = "/roberts";
+    if (bPressed && window.location.pathname !== "/rovers")
+      window.location.href = "/rovers";
   }, [aPressed, bPressed, xPressed, yPressed]);
 
   return (
@@ -27,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/inicio" element={<ImagenDelDia />} />
           <Route path="/" element={<Planetas />} />
-          <Route path="/roberts" element={<Rovers />} />
+          <Route path="/rovers" element={<Rovers />} />
           <Route path="/gamepad" element={<Gamepad />} />
           <Route path="/error" element={<h1>404</h1>} />
         </Routes>
