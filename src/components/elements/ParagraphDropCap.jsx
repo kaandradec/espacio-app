@@ -13,7 +13,7 @@ export default function ParagraphDropCap({ text, color, size }) {
   return (
     <p
       className={`
-           text-xs md:text-sm lg:text-md text-black/60 dark:text-white/60 text-pretty mb-2
+           text-xs md:text-sm lg:text-lg text-black/60 dark:text-white/60 text-pretty mb-2
           first-letter:text-black/80 first-letter:dark:text-white/80 first-letter:text-5xl 
             first-letter:float-start first-letter:me-2 ${
               colorVariants[color] || ""

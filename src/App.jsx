@@ -7,6 +7,7 @@ import ImagenDelDia from "./pages/ImagenDelDia";
 import Header from "./components/Header";
 import useGamepad from "./hooks/useGamepad";
 import { useEffect } from "react";
+import Info from "./pages/Info";
 function App() {
   const { aPressed, bPressed, xPressed, yPressed } = useGamepad();
 
@@ -22,15 +23,23 @@ function App() {
   return (
     <main className="flex h-dv bg-slate-200 dark:bg-gray-900 lg:flex-col ">
       <Header />
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/inicio" element={<ImagenDelDia />} />
           <Route path="/" element={<Planetas />} />
           <Route path="/rovers" element={<Rovers />} />
           <Route path="/gamepad" element={<Gamepad />} />
           <Route path="/error" element={<h1>404</h1>} />
+          <Route path="/info" element={<Info />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <div className="flex flex-col mx-auto justify-center items-center gap-2 lg: mt-4">
+        <h1 className="text-2xl lg:text-5xl font-bold">Página suspendida 💸</h1>
+        <img
+          src="https://c.tenor.com/L4rjYt7wOQoAAAAC/tenor.gif"
+          alt="pago $$$"
+        />
+      </div>
     </main>
   );
 }

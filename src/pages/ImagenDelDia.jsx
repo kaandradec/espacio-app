@@ -10,6 +10,7 @@ export default function ImagenDelDia() {
   const fetchPictureNassa = async () => {
     const data = await fetchPicture();
     setData(data);
+    console.log(data);
   };
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export default function ImagenDelDia() {
         >
           Imagen del día
         </h1>
-        <div className="h-72 md:h-80 overflow-auto">
+        <div className="h-72 md:h-80 lg:h-full overflow-auto">
           <ParagraphDropCap text={data?.explanation} size="xs" />
         </div>
       </section>

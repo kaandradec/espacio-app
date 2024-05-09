@@ -13,8 +13,7 @@ export default function Planeta() {
   return (
     <section className="aspect-square bg-slate-300 dark:bg-black/50">
       <Canvas>
-        <ambientLight intensity={2} />
-        <OrbitControls enableZoom={false} />
+        <OrbitControls enableZoom={true} />
         <Suspense fallback={null}>
           <Esfera />
         </Suspense>
@@ -143,18 +142,38 @@ export function Esfera(props) {
 
   return (
     <group {...props} dispose={null}>
+      {keyPlanet === 7 && (
+        <>
+          <mesh rotation={[-Math.PI / 2.3, -Math.PI / 14, 0]}>
+            <ringGeometry args={[2, 2.2, 64]} />
+            <meshStandardMaterial color="#524f46" side={2} />
+          </mesh>
+          <mesh rotation={[-Math.PI / 2.3, -Math.PI / 14, 0]}>
+            <ringGeometry args={[2.25, 2.4, 64]} />
+            <meshStandardMaterial color="#b0a18c" side={2} />
+          </mesh>
+          <mesh rotation={[-Math.PI / 2.3, -Math.PI / 14, 0]}>
+            <ringGeometry args={[2.4, 2.7, 64]} />
+            <meshStandardMaterial color="#bbb09a" side={2} />
+          </mesh>
+          <mesh rotation={[-Math.PI / 2.3, -Math.PI / 14, 0]}>
+            <ringGeometry args={[2.75, 3, 64]} />
+            <meshStandardMaterial color="#bbb09a" side={2} />
+          </mesh>
+        </>
+      )}
       <mesh ref={planetRef}>
-        <sphereGeometry args={[2.5, 64, 64]} />
-        {keyPlanet === 0 ? <meshStandardMaterial map={colorMap[0]} /> : ""}
-        {keyPlanet === 1 ? <meshStandardMaterial map={colorMap[1]} /> : ""}
-        {keyPlanet === 2 ? <meshStandardMaterial map={colorMap[2]} /> : ""}
-        {keyPlanet === 3 ? <meshStandardMaterial map={colorMap[3]} /> : ""}
-        {keyPlanet === 4 ? <meshStandardMaterial map={colorMap[4]} /> : ""}
-        {keyPlanet === 5 ? <meshStandardMaterial map={colorMap[5]} /> : ""}
-        {keyPlanet === 6 ? <meshStandardMaterial map={colorMap[6]} /> : ""}
-        {keyPlanet === 7 ? <meshStandardMaterial map={colorMap[7]} /> : ""}
-        {keyPlanet === 8 ? <meshStandardMaterial map={colorMap[8]} /> : ""}
-        {keyPlanet === 9 ? <meshStandardMaterial map={colorMap[9]} /> : ""}
+        <sphereGeometry args={keyPlanet == 7 ? [1.8, 64, 64] : [2.5, 64, 64]} />
+        {keyPlanet === 0 && <meshStandardMaterial map={colorMap[0]} />}
+        {keyPlanet === 1 && <meshStandardMaterial map={colorMap[1]} />}
+        {keyPlanet === 2 && <meshStandardMaterial map={colorMap[2]} />}
+        {keyPlanet === 3 && <meshStandardMaterial map={colorMap[3]} />}
+        {keyPlanet === 4 && <meshStandardMaterial map={colorMap[4]} />}
+        {keyPlanet === 5 && <meshStandardMaterial map={colorMap[5]} />}
+        {keyPlanet === 6 && <meshStandardMaterial map={colorMap[6]} />}
+        {keyPlanet === 7 && <meshStandardMaterial map={colorMap[7]} />}
+        {keyPlanet === 8 && <meshStandardMaterial map={colorMap[8]} />}
+        {keyPlanet === 9 && <meshStandardMaterial map={colorMap[9]} />}
       </mesh>
     </group>
   );
