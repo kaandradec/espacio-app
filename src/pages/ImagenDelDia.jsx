@@ -18,7 +18,7 @@ export default function ImagenDelDia() {
   }, []);
 
   return (
-    <div className="h-dvh flex  w-full lg:w-4/6 mx-4 lg:mx-auto gap-32 mt-1 lg:mt-8">
+    <div className="h-dvh flex  w-full lg:w-4/6 mx-4 lg:mx-auto gap-20 mt-1 lg:mt-8">
       <section className="w-1/2 ">
         <h1
           className={`

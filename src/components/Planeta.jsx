@@ -141,7 +141,7 @@ export function Esfera(props) {
   };
 
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} ref={planetRef}>
       {keyPlanet === 7 && (
         <>
           <mesh rotation={[-Math.PI / 2.3, -Math.PI / 14, 0]}>
@@ -162,7 +162,7 @@ export function Esfera(props) {
           </mesh>
         </>
       )}
-      <mesh ref={planetRef}>
+      <mesh>
         <sphereGeometry args={keyPlanet == 7 ? [1.8, 64, 64] : [2.5, 64, 64]} />
         {keyPlanet === 0 && <meshStandardMaterial map={colorMap[0]} />}
         {keyPlanet === 1 && <meshStandardMaterial map={colorMap[1]} />}
