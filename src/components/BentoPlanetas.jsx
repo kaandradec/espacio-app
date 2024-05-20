@@ -14,7 +14,7 @@ export default function BentoPlanetas() {
       style={{ gridTemplateRows: "auto auto auto 1fr" }}
     >
       <h1 className="md:text-2xl lg:text-4xl text-black/90 dark:text-white/80 font-semibold col-span-4 md:col-span-5 text-center mb-0 lg:mb-4">
-        Planetas
+        Sistema solar
       </h1>
       <BotonPlaneta
         text="Sol"
